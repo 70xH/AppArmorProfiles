@@ -1,6 +1,5 @@
 <div align="center">
   <h3 align="center">AppArmor Profiles</h3>
-
   <p align="center">
     AppArmor profiles for my personal computer and server
     <br />
@@ -13,34 +12,19 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
+    <li><a href="#about-the-project">About The Project</a></li>
+    <li><a href="#getting-started">Getting Started</a></li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
 ## About The Project
 
-Contains all of personal important apparmor profiles used in my system and server. This repo will always be updating to improve security of interactions between said software and the system.
-There are multiple profiles out in the internet, but these profiles are implemented and improved focusing on particular preferences.
+Contains all of personal important apparmor profiles used in my system and server. 
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+This repo will always be updating to improve security of interactions between said software and the system. There are multiple profiles out in the internet, but these profiles are implemented and improved focusing on particular preferences.
 
 ## Getting Started
 
@@ -97,10 +81,6 @@ Don't forget to give the project a star! Thanks again!
 4. Push to the Branch (`git push origin profile/NewProfile`)
 5. Open a Pull Request
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
