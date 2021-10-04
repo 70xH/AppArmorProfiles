@@ -1,0 +1,40 @@
+# Last Modified: Mon Oct  4 01:16:47 2021
+abi <abi/3.0>,
+
+include <tunables/global>
+
+/usr/share/discord-canary/DiscordCanary {
+  include <abstractions/base>
+  include <abstractions/dbus>
+  include <abstractions/audio>
+  include <abstractions/dbus-strict>
+  include <abstractions/ibus>
+  include <abstractions/gnome>
+  include <abstractions/dconf>
+  include <abstractions/nameservice>
+
+  # Under usr
+  /usr/share/discord-canary/DiscordCanary mrix,
+  /usr/share/discord-canary/libffmpeg.so mr,
+  /usr/share/discord-canary/** r,
+
+  # Under dev
+  /dev/shm/* rw,
+
+  # Under proc
+  /proc/ r,
+  /proc/*/fd/ r,
+  /proc/*/setgroups w,
+  /proc/*/cmdline r,
+  /proc/*/stat r,
+  /proc/*/gid_map w,
+  /proc/*/uid_map w,
+  /proc/sys/kernel/yama/ptrace_scope r,
+
+  # Capabilities
+  capability sys_admin,
+  capability sys_chroot,
+
+  # Under home
+  @{HOME}/build/powercord/** r,
+}
