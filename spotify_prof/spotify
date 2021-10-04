@@ -1,0 +1,52 @@
+abi <abi/3.0>,
+
+include <tunables/global>
+
+/usr/bin/spotify {
+  include <abstractions/base>
+  include <abstractions/bash>
+  include <abstractions/dbus>
+  include <abstractions/audio>
+  include <abstractions/dbus-strict>
+  include <abstractions/ibus>
+  include <abstractions/gnome>
+  include <abstractions/dconf>
+  include <abstractions/nameservice>
+
+  # Under usr
+  /usr/bin/dash ix,
+  /usr/bin/spotify r,
+  /usr/libexec/spotify/spotify ix,
+  /usr/libexec/spotify/** rm,
+  /usr/share/fonts/** r,
+  /usr/share/fonts/ r,
+  /usr/share/fontconfig/** r,
+
+  # Under etc
+  /etc/fonts/** r,
+  /etc/udev/udev.conf r,
+
+  # Under var
+  /var/cache/fontconfig/* r,
+  /var/lib/dbus/machine-id r,
+
+  # Under dev
+  /dev/shm/* rw,
+
+  # Under proc
+  /proc/*/stat r,
+  /proc/*/task/*/stat r,
+  /proc/*/cmdline r,
+  /proc/*/fd/ r,
+  /proc/ r,
+  /proc/sys/fs/inotify/max_user_watches r,
+  /proc/*/oom_score_adj rw,
+  /proc/sys/kernel/yama/ptrace_scope r,
+
+  # Under home
+  @{HOME}/.Xauthority r,
+  @{HOME}/.cache/spotify/** rwk,
+  @{HOME}/.cache/fontconfig/* rw,
+  @{HOME}/.config/spotify/** rw,
+  @{HOME}/.config/user-dirs.dirs r,
+}
