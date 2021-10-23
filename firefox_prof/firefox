@@ -1,0 +1,55 @@
+abi <abi/3.0>,
+
+include <tunables/global>
+
+/usr/lib/firefox/firefox {
+  include <abstractions/audio>
+  include <abstractions/cups-client>
+  include <abstractions/dbus-strict>
+  include <abstractions/dbus-session-strict>
+  include <abstractions/dconf>
+  include <abstractions/gnome>
+  include <abstractions/ibus>
+  include <abstractions/nameservice>
+  include <abstractions/openssl>
+  include <abstractions/p11-kit>
+  include <abstractions/ubuntu-unity7-base>
+  include <abstractions/ubuntu-unity7-launcher>
+  
+  # Under usr
+  /usr/lib/firefox/firefox rwix,
+  /usr/share/icu/69.1/* r,
+  /usr/share/fonts/** rw,
+  /usr/lib/firefox/** rw,
+  /usr/bin/cut rix,
+  /usr/share/mathjax/fonts/** r,
+  /usr/bin/dbus-launch rix,
+
+  # Under dev
+  /dev/ r,
+  /dev/shm/* rw,
+
+  # Under proc
+  /proc/*/task/*/stat r,
+  /proc/*/stat r,
+  /proc/*/cgroup r,
+  /proc/*/fd/ r,
+  /proc/*/mountinfo r,
+  /proc/*/statm r,
+  /proc/*/smaps r,
+  /proc/*/uid_map rw,
+  /proc/*/setgroups rw,
+  /proc/*/gid_map rw,
+
+  # Under home
+  @{HOME}/.Xauthority r,
+  @{HOME}/.mozilla/firefox/** rwk,
+  @{HOME}/.cache/mozilla/firefox/** rwk,
+  @{HOME}/anaconda3/bin/dbus-launch rix,
+  @{HOME}/anaconda3/lib/libdbus-1.so.3.29.0 rm,
+
+  # Capabilities
+  capability sys_admin,
+  capability sys_chroot,
+  capability sys_ptrace,
+}
